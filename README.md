@@ -51,7 +51,7 @@ CSV files are written to `results/` unless you pass `--out`.
 
 Agents move like particles. Collisions trigger trades. Circle area corresponds to wealth share.
 
-This reproduces the spirit of the original Processing/p5 sketch, but with more metrics and controls.
+This reproduces the spirit of Philip Rosedale's original Processing simulation in [*Why do The Rich Get Richer?*](https://philiprosedale.substack.com/p/why-do-the-rich-get-richer), but with more metrics and controls. See [Credits and original work](#credits-and-original-work).
 
 Important caveat: because larger circles collide more often, wealth can affect encounter rate. That can be interpreted as visibility/attention advantage, but it is not a clean random-matching model.
 
@@ -146,6 +146,24 @@ Good extensions:
 8. Add platform monetary policy: target exchange-rate stability by selling or buying currency.
 9. Add land zoning or search-ranking rules.
 10. Add real energy cost as a constraint on platform operation.
+
+---
+
+## Credits and original work
+
+The yard-sale presets and the redistribution experiments in this codebase are directly inspired by **Philip Rosedale's "rich get richer" simulation series**, originally written in Processing. Three of his posts map almost one-to-one onto the presets here:
+
+- Philip Rosedale, [*Why do The Rich Get Richer?*](https://philiprosedale.substack.com/p/why-do-the-rich-get-richer) (Jan 27, 2021) — the original collision/particle yard-sale simulation (preset 1).
+- Philip Rosedale, [*Printing Money Doesn't Help*](https://philiprosedale.substack.com/p/printing-money-doesnt-help) — printed UBI alone does not stop concentration (preset 3).
+- Philip Rosedale, [*Transaction Tax Dividend*](https://philiprosedale.substack.com/p/transaction-tax-dividend) — a transaction tax funding a per-person dividend (preset 4).
+
+The underlying mechanism is the econophysics **"yard-sale model"**, which predates Rosedale's visualization:
+
+- A. Chakraborti, *Distributions of money in model markets of economy*, International Journal of Modern Physics C, 13(10), 2002.
+- B. Hayes, *Follow the Money*, American Scientist, 90(5), 2002 — coined the term "yard-sale model".
+- B. M. Boghosian, *The Inescapable Casino*, Scientific American, 2019 — the affine wealth model adds taxes/redistribution and fits real wealth distributions.
+
+This project re-implements those ideas in dependency-free JavaScript, adds more metrics and controls, and extends them with wealth-acquired advantage and a small virtual-world economy. It is an independent reimplementation and is not affiliated with or endorsed by Philip Rosedale.
 
 ---
 
