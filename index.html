@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thermodynamic Economics Simulator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <h1>Thermodynamic Economics Simulator</h1>
+      <p class="tagline">Yard-sale exchange, redistribution, wealth-acquired advantage, and a small virtual-world economy.</p>
+
+      <label class="field">
+        <span>Preset</span>
+        <select id="presetSelect"></select>
+      </label>
+      <p id="presetDescription" class="description"></p>
+
+      <div class="buttonRow">
+        <button id="toggleRun">Pause</button>
+        <button id="resetBtn">Reset</button>
+        <button id="stepBtn">Step</button>
+      </div>
+      <div class="buttonRow">
+        <button id="exportCsvBtn">Export CSV</button>
+        <button id="copyParamsBtn">Copy params</button>
+      </div>
+
+      <details open>
+        <summary>Core model</summary>
+        <div id="coreControls" class="controls"></div>
+      </details>
+
+      <details open>
+        <summary>Policy levers</summary>
+        <div id="policyControls" class="controls"></div>
+      </details>
+
+      <details>
+        <summary>Virtual world levers</summary>
+        <div id="virtualControls" class="controls"></div>
+      </details>
+
+      <details>
+        <summary>How to read this</summary>
+        <div class="notes">
+          <p><strong>Gini</strong> and <strong>Top 1%</strong> show concentration. <strong>Entropy</strong> shows dispersion of money. <strong>Velocity</strong> approximates transaction volume divided by agent money.</p>
+          <p>The collision preset intentionally couples visual radius to wealth, like the original demo. The clean yard-sale preset decouples trade matching from the display.</p>
+          <p>The virtual-world preset is deliberately simple: creators produce goods, consumers buy through a marketplace, land boosts visibility, and the platform collects fees/tier.</p>
+        </div>
+      </details>
+    </aside>
+
+    <main id="main">
+      <div id="embedBar" hidden>
+        <label class="embedField">
+          <span>Preset</span>
+          <select id="embedPreset"></select>
+        </label>
+        <button id="embedToggle">Pause</button>
+        <button id="embedReset">Reset</button>
+        <a id="embedFull" href="./index.html" target="_blank" rel="noopener">Open full version &#8599;</a>
+      </div>
+      <canvas id="world" width="980" height="620"></canvas>
+      <section id="metrics"></section>
+      <canvas id="chart" width="980" height="190"></canvas>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
